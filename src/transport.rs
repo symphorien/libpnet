@@ -34,6 +34,7 @@ use packet::Packet;
 use packet::ip::IpNextHeaderProtocol;
 use packet::ipv4::Ipv4Packet;
 use packet::udp::UdpPacket;
+use packet::tcp::TcpPacket;
 
 use internal;
 use sockets;
@@ -290,3 +291,8 @@ transport_channel_iterator!(Ipv4Packet,
 transport_channel_iterator!(UdpPacket,
                             UdpTransportChannelIterator,
                             udp_packet_iter);
+
+transport_channel_iterator!(TcpPacket,
+                            TcpTransportChannelIterator,
+                            tcp_packet_iter);
+
